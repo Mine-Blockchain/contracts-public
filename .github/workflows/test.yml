@@ -1,0 +1,31 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: "Run Test"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: yarn install
+      - name: Hardhat artifact cache
+        uses: actions/cache@v2
+        id: hardhat-cache
+        with:
+          path: "artifacts"
+          key: artifacts-${{ hashFiles('contracts/**/*.sol') }}
+          restore-keys: |
+            artifacts-
+      - name: Hardhat compile
+        run: npx hardhat compile
+        if: steps.hardhat-cache.outputs.cache-hit != 'true'
+      - name: Run test
+        run: yarn run test

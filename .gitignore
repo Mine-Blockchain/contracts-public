@@ -1,0 +1,16 @@
+node_modules
+package-lock.json
+.vscode
+
+#Hardhat files
+cache
+artifacts
+.idea
+.env
+/.DS_Store
+.openzeppelin/unknown-31337.json
+bin
+
+#Coverage
+coverage
+coverage.json
