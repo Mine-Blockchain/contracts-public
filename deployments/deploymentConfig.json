@@ -10,26 +10,26 @@
         "wBTC": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
         "wETH": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
         "USDT": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-        "pBTCMSupply": 100000000,
+        "pBTCMSupply": 200000000,
         "pETHMSupply": 100000000,
-        "pBTCMPrice": 160,
-        "pETHMPrice": 140
+        "pBTCMPrice": -1,
+        "pETHMPrice": -1
     },
     "ropsten": {
         "ownerAddress": "0x94Fddc964DAe1b9a107BF198ea7130E259Bb77BF",
         "managerAddress": "0x94Fddc964DAe1b9a107BF198ea7130E259Bb77BF",
         "treasuryAddress": "0x94Fddc964DAe1b9a107BF198ea7130E259Bb77BF",
         "rewardDepositorAddress": "0x94Fddc964DAe1b9a107BF198ea7130E259Bb77BF",
-        "maintainerAddress": "0x94Fddc964DAe1b9a107BF198ea7130E259Bb77BF",
-        "claimInterval": 60,
+        "maintainerAddress": "0xc625E3B4cFaD99af18F80163787144645475D909",
+        "claimInterval": 86400,
         "claimIndex": 0,
-        "wBTC": "0x1fc93aAB63a459264588A7d7Bf2Ca4D7b86c34Fe",
-        "wETH": "0xb24eD5294db277652b5B5251D9BEa32FeAa3B109",
-        "USDT": "0x51071F965C51087519B1B8d8d1b53F36eaBa91cc",
-        "pBTCMSupply": 100000000,
+        "wBTC": "0x69fF9FB883d1a869E93Dac985CE07acE681F2EfF",
+        "wETH": "0x2ecC884d3933E6281BFC1648A4058862933431D0",
+        "USDT": "0xC18153C8ef40cd9674dbbcd491a2d6f6a473b1F9",
+        "pBTCMSupply": 200000000,
         "pETHMSupply": 100000000,
-        "pBTCMPrice": 160,
-        "pETHMPrice": 140
+        "pBTCMPrice": 200,
+        "pETHMPrice": 100
     },
     "local": {
         "ownerAddress": "0x94Fddc964DAe1b9a107BF198ea7130E259Bb77BF",
@@ -42,9 +42,9 @@
         "wBTC": "0x1c85638e118b37167e9298c2268758e058DdfDA0",
         "wETH": "0x367761085BF3C12e5DA2Df99AC6E1a824612b8fb",
         "USDT": "0x7969c5eD335650692Bc04293B07F5BF2e7A673C0",
-        "pBTCMSupply": 100000000,
+        "pBTCMSupply": 200000000,
         "pETHMSupply": 100000000,
-        "pBTCMPrice": 160,
-        "pETHMPrice": 140
+        "pBTCMPrice": 200,
+        "pETHMPrice": 100
     }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "polkamine-contract",
+  "name": "minenetwork-contract",
   "version": "1.0.0",
-  "description": "Polkamine Contract",
+  "description": "MineNetwork Contract",
   "main": "index.js",
   "scripts": {
     "lint:sol": "solhint \"contracts/**/*.sol\"",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Polkamine-Network/Polkamine-Contract.git"
+    "url": "git+https://github.com/MineNetwork-Network/MineNetwork-Contract.git"
   },
   "author": "0xPilot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Polkamine-Network/Polkamine-Contract/issues"
+    "url": "https://github.com/MineNetwork-Network/MineNetwork-Contract/issues"
   },
-  "homepage": "https://github.com/Polkamine-Network/Polkamine-Contract#readme",
+  "homepage": "https://github.com/MineNetwork-Network/MineNetwork-Contract#readme",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.6",

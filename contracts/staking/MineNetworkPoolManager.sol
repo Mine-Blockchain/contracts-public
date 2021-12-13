@@ -5,14 +5,14 @@ import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/utils/SafeERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
-import "../interfaces/IPolkaminePoolManager.sol";
-import "../interfaces/IPolkamineAdmin.sol";
+import "../interfaces/IMineNetworkPoolManager.sol";
+import "../interfaces/IMineNetworkAdmin.sol";
 
 /**
- * @title Polkamine's Pool Manager contract
- * @author Polkamine
+ * @title MineNetwork's Pool Manager contract
+ * @author MineNetwork
  */
-contract PolkaminePoolManager is IPolkaminePoolManager, ReentrancyGuardUpgradeable {
+contract MineNetworkPoolManager is IMineNetworkPoolManager, ReentrancyGuardUpgradeable {
   using SafeERC20Upgradeable for IERC20Upgradeable;
 
   /*** Events ***/
@@ -38,12 +38,12 @@ contract PolkaminePoolManager is IPolkaminePoolManager, ReentrancyGuardUpgradeab
   /*** Contract Logic Starts Here */
 
   modifier onlyManager() {
-    require(msg.sender == IPolkamineAdmin(addressManager).manager(), "Not polkamine manager");
+    require(msg.sender == IMineNetworkAdmin(addressManager).manager(), "Not MineNetwork manager");
     _;
   }
 
   modifier onlyUnpaused() {
-    require(!IPolkamineAdmin(addressManager).paused(), "Paused");
+    require(!IMineNetworkAdmin(addressManager).paused(), "Paused");
     _;
   }
 

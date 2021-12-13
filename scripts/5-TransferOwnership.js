@@ -38,11 +38,11 @@ main = async () => {
   await mine.grantRole(defaultAdminRole, ownerAddress);
   await mine.revokeRole(defaultAdminRole, deployer.address);
 
-  // PolkamineAdmin
-  const polkamineAdminAftifact = await hre.artifacts.readArtifact("PolkamineAdmin");
-  const polkamineAdmin = await hre.ethers.getContractAt(polkamineAdminAftifact.abi, contracts["PolkamineAdmin"]);
+  // MineNetworkAdmin
+  const MineNetworkAdminAftifact = await hre.artifacts.readArtifact("MineNetworkAdmin");
+  const mineNetworkAdmin = await hre.ethers.getContractAt(MineNetworkAdminAftifact.abi, contracts["MineNetworkAdmin"]);
 
-  polkamineAdmin.transferOwnership(ownerAddress); 
+  mineNetworkAdmin.transferOwnership(ownerAddress); 
 };
 
 // We recommend this pattern to be able to use async/await everywhere

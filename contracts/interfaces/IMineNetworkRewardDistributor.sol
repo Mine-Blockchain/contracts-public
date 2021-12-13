@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-interface IPolkamineRewardDistributor {
+interface IMineNetworkRewardDistributor {
   function deposit(address _rewardToken, uint256 _amount) external;
 
   function claim(

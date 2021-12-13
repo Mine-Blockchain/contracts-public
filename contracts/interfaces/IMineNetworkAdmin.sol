@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-interface IPolkamineAdmin {
+interface IMineNetworkAdmin {
   function manager() external view returns (address);
 
   function owner() external view returns (address);

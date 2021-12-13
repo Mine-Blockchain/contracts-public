@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-interface IPolkaminePoolManager {
+interface IMineNetworkPoolManager {
   function pools(uint256 pid)
     external
     returns (

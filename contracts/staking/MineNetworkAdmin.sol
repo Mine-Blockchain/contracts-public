@@ -5,26 +5,26 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol";
 
 /**
- * @title Polkamine's Admin contract
- * @author Polkamine
+ * @title MineNetwork's Admin contract
+ * @author MineNetwork
  */
-contract PolkamineAdmin is PausableUpgradeable, OwnableUpgradeable {
+contract MineNetworkAdmin is PausableUpgradeable, OwnableUpgradeable {
   /*** Storage Properties ***/
 
-  // polkamine manager addresses
+  // MineNetwork manager addresses
   address public manager;
   address public rewardDepositor;
   address public maintainer;
   address public treasury;
 
-  // polkamine contracts
+  // MineNetwork contracts
   address public rewardDistributorContract;
   address public poolManagerContract;
 
   /*** Contract Logic Starts Here */
 
   modifier onlyManager() {
-    require(msg.sender == manager, "Not polkamine manager");
+    require(msg.sender == manager, "Not MineNetwork manager");
     _;
   }
 

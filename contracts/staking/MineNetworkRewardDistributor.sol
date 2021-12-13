@@ -6,16 +6,16 @@ import "@openzeppelin/contracts-upgradeable/token/ERC20/utils/SafeERC20Upgradeab
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/cryptography/ECDSAUpgradeable.sol";
 
-import "../interfaces/IPolkamineRewardDistributor.sol";
-import "../interfaces/IPolkaminePoolManager.sol";
-import "../interfaces/IPolkamineAdmin.sol";
+import "../interfaces/IMineNetworkRewardDistributor.sol";
+import "../interfaces/IMineNetworkPoolManager.sol";
+import "../interfaces/IMineNetworkAdmin.sol";
 
 /**
- * @title Polkamine's Reward Distributor Contract
+ * @title MineNetwork's Reward Distributor Contract
  * @notice Distribute users the reward
- * @author Polkamine
+ * @author MineNetwork
  */
-contract PolkamineRewardDistributor is IPolkamineRewardDistributor, ReentrancyGuardUpgradeable {
+contract MineNetworkRewardDistributor is IMineNetworkRewardDistributor, ReentrancyGuardUpgradeable {
   using ECDSAUpgradeable for bytes32;
   using SafeERC20Upgradeable for IERC20Upgradeable;
 
@@ -43,22 +43,22 @@ contract PolkamineRewardDistributor is IPolkamineRewardDistributor, ReentrancyGu
   /*** Contract Logic Starts Here */
 
   modifier onlyManager() {
-    require(msg.sender == IPolkamineAdmin(addressManager).manager(), "Not polkamine manager");
+    require(msg.sender == IMineNetworkAdmin(addressManager).manager(), "Not MineNetwork manager");
     _;
   }
 
   modifier onlyRewardDepositor() {
-    require(msg.sender == IPolkamineAdmin(addressManager).rewardDepositor(), "Not reward depositor");
+    require(msg.sender == IMineNetworkAdmin(addressManager).rewardDepositor(), "Not reward depositor");
     _;
   }
 
   modifier onlyMaintainer() {
-    require(msg.sender == IPolkamineAdmin(addressManager).maintainer(), "Not maintainer");
+    require(msg.sender == IMineNetworkAdmin(addressManager).maintainer(), "Not maintainer");
     _;
   }
 
   modifier onlyUnpaused() {
-    require(!IPolkamineAdmin(addressManager).paused(), "Paused");
+    require(!IMineNetworkAdmin(addressManager).paused(), "Paused");
     _;
   }
 
@@ -111,18 +111,18 @@ contract PolkamineRewardDistributor is IPolkamineRewardDistributor, ReentrancyGu
     userLastClaimedAt[msg.sender][_pid] = block.timestamp;
 
     // check signer
-    address maintainer = IPolkamineAdmin(addressManager).maintainer();
+    address maintainer = IMineNetworkAdmin(addressManager).maintainer();
     bytes32 data = keccak256(
       abi.encodePacked(msg.sender, _pid, _rewardToken, _amount, _doubleRewardToken, _doubleRewardAmount, _claimIndex)
     );
     require(data.toEthSignedMessageHash().recover(_signature) == maintainer, "Invalid signer");
 
     // check pid
-    address poolManager = IPolkamineAdmin(addressManager).poolManagerContract();
-    require(_pid < IPolkaminePoolManager(poolManager).poolLength(), "Invalid pid");
+    address poolManager = IMineNetworkAdmin(addressManager).poolManagerContract();
+    require(_pid < IMineNetworkPoolManager(poolManager).poolLength(), "Invalid pid");
 
     // check rewardToken and doubleRewardToken
-    (, address rewardToken, address doubleRewardToken) = IPolkaminePoolManager(poolManager).pools(_pid);
+    (, address rewardToken, address doubleRewardToken) = IMineNetworkPoolManager(poolManager).pools(_pid);
     require(rewardToken == _rewardToken, "Mismatched reward token");
     require(doubleRewardToken == _doubleRewardToken, "Mismatched double reward token");
 

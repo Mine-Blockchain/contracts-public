@@ -3,7 +3,7 @@ const { ethers, upgrades } = require("hardhat");
 const { toRole, increaseTime, ZERO, bigNumber } = require("../utils");
 
 describe("TokenSale", () => {
-  let pBTCM, pETHM, depositToken, polkamineAdmin, tokenSale;
+  let pBTCM, pETHM, depositToken, mineNetworkAdmin, tokenSale;
 
   const MINTER_ROLE = toRole("MINTER_ROLE");
   const BURNER_ROLE = toRole("BURNER_ROLE");
@@ -21,16 +21,16 @@ describe("TokenSale", () => {
     const DepositToken = await ethers.getContractFactory("MINEToken");
     depositToken = await upgrades.deployProxy(DepositToken, ["MDT", "Mock Deposit Token"]);
 
-    // Deploy PolkamineAdmin
-    const PolkamineAdmin = await ethers.getContractFactory("PolkamineAdmin");
-    polkamineAdmin = await upgrades.deployProxy(PolkamineAdmin, [manager.address]);
+    // Deploy MineNetworkAdmin
+    const MineNetworkAdmin = await ethers.getContractFactory("MineNetworkAdmin");
+    mineNetworkAdmin = await upgrades.deployProxy(MineNetworkAdmin, [manager.address]);
 
     // Deploy TokenSale
     const TokenSale = await ethers.getContractFactory("TokenSale");
-    tokenSale = await upgrades.deployProxy(TokenSale, [polkamineAdmin.address]);
+    tokenSale = await upgrades.deployProxy(TokenSale, [mineNetworkAdmin.address]);
 
-    // Add treasury address to PolkamineAdmin
-    polkamineAdmin.setTreasury(treasury.address);
+    // Add treasury address to MineNetworkAdmin
+    mineNetworkAdmin.setTreasury(treasury.address);
 
     // Mint depositToken and rewardToken
     await pBTCM.grantRole(MINTER_ROLE, tokenSale.address);
@@ -42,7 +42,7 @@ describe("TokenSale", () => {
       let depositTokenAmount = 100;
 
       await expect(tokenSale.setTokenPrice(pBTCM.address, depositToken.address, depositTokenAmount)).to.be.revertedWith(
-        "Not polkamine manager",
+        "Not MineNetwork manager",
       );
     });
 
@@ -62,7 +62,7 @@ describe("TokenSale", () => {
       let tokenSupplyAmount = 10000;
 
       await expect(tokenSale.setTokenSupplyAmount(pBTCM.address, tokenSupplyAmount)).to.be.revertedWith(
-        "Not polkamine manager",
+        "Not MineNetwork manager",
       );
     });
 
@@ -205,7 +205,7 @@ describe("TokenSale", () => {
       await depositToken.connect(alice).approve(tokenSale.address, pBTCMDepositTokenAmount * pBTCMPurchaseTokenAmount);
       await tokenSale.connect(alice).purchase(pBTCM.address, pBTCMPurchaseTokenAmount);
       await expect(tokenSale.connect(manager).withdrawFund(depositToken.address)).to.be.revertedWith(
-        "Not polkamine owner",
+        "Not MineNetwork owner",
       );
     });
 

@@ -5,12 +5,12 @@ import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/utils/SafeERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
-import "../interfaces/IPolkamineAdmin.sol";
+import "../interfaces/IMineNetworkAdmin.sol";
 import "../interfaces/IPToken.sol";
 
 /**
  * @notice Token Sale Contract
- * @author Polkamine
+ * @author MineNetwork
  */
 contract TokenSale is ReentrancyGuardUpgradeable {
   using SafeERC20Upgradeable for IERC20Upgradeable;
@@ -43,12 +43,12 @@ contract TokenSale is ReentrancyGuardUpgradeable {
   /*** Contract Logic Starts Here */
 
   modifier onlyManager() {
-    require(msg.sender == IPolkamineAdmin(addressManager).manager(), "Not polkamine manager");
+    require(msg.sender == IMineNetworkAdmin(addressManager).manager(), "Not MineNetwork manager");
     _;
   }
 
   modifier onlyOwner() {
-    require(msg.sender == IPolkamineAdmin(addressManager).owner(), "Not polkamine owner");
+    require(msg.sender == IMineNetworkAdmin(addressManager).owner(), "Not MineNetwork owner");
     _;
   }
 
@@ -112,7 +112,7 @@ contract TokenSale is ReentrancyGuardUpgradeable {
    * @param _tokenAddress token address to withdraw
    */
   function withdrawFund(address _tokenAddress) external onlyOwner {
-    address treasury = IPolkamineAdmin(addressManager).treasury();
+    address treasury = IMineNetworkAdmin(addressManager).treasury();
     uint256 balance = IERC20Upgradeable(_tokenAddress).balanceOf(address(this));
 
     IERC20Upgradeable(_tokenAddress).safeTransfer(treasury, balance);

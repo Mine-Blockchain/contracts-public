@@ -2642,46 +2642,46 @@
             "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:67"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "addressManager",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:38"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:38"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "userClaimedReward",
             "type": "t_mapping(t_uint256,t_mapping(t_address,t_uint256))",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:39"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:39"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "poolClaimedReward",
             "type": "t_mapping(t_uint256,t_uint256)",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:40"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:40"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "userLastClaimedAt",
             "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:41"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:41"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "claimInterval",
             "type": "t_uint256",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:42"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:42"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "claimIndex",
             "type": "t_uint256",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:43"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:43"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "isUsedSignature",
             "type": "t_mapping(t_bytes_memory_ptr,t_bool)",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:44"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:44"
           }
         ],
         "types": {
@@ -3028,40 +3028,40 @@
             "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:77"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "manager",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:15"
+            "src": "contracts/staking/MineNetworkAdmin.sol:15"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "rewardDepositor",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:16"
+            "src": "contracts/staking/MineNetworkAdmin.sol:16"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "maintainer",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:17"
+            "src": "contracts/staking/MineNetworkAdmin.sol:17"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "treasury",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:18"
+            "src": "contracts/staking/MineNetworkAdmin.sol:18"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "rewardDistributorContract",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:21"
+            "src": "contracts/staking/MineNetworkAdmin.sol:21"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "poolManagerContract",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:22"
+            "src": "contracts/staking/MineNetworkAdmin.sol:22"
           }
         ],
         "types": {
@@ -3476,40 +3476,40 @@
             "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:77"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "manager",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:19"
+            "src": "contracts/staking/MineNetworkAdmin.sol:19"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "rewardDepositor",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:20"
+            "src": "contracts/staking/MineNetworkAdmin.sol:20"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "maintainer",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:21"
+            "src": "contracts/staking/MineNetworkAdmin.sol:21"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "treasury",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:22"
+            "src": "contracts/staking/MineNetworkAdmin.sol:22"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "rewardDistributorContract",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:25"
+            "src": "contracts/staking/MineNetworkAdmin.sol:25"
           },
           {
-            "contract": "PolkamineAdmin",
+            "contract": "MineNetworkAdmin",
             "label": "poolManagerContract",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineAdmin.sol:26"
+            "src": "contracts/staking/MineNetworkAdmin.sol:26"
           }
         ],
         "types": {
@@ -3561,34 +3561,34 @@
             "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:67"
           },
           {
-            "contract": "PolkaminePoolManager",
+            "contract": "MineNetworkPoolManager",
             "label": "addressManager",
             "type": "t_address",
-            "src": "contracts/staking/PolkaminePoolManager.sol:36"
+            "src": "contracts/staking/MineNetworkPoolManager.sol:36"
           },
           {
-            "contract": "PolkaminePoolManager",
+            "contract": "MineNetworkPoolManager",
             "label": "pools",
             "type": "t_array(t_struct(PoolInfo)3365_storage)dyn_storage",
-            "src": "contracts/staking/PolkaminePoolManager.sol:37"
+            "src": "contracts/staking/MineNetworkPoolManager.sol:37"
           },
           {
-            "contract": "PolkaminePoolManager",
+            "contract": "MineNetworkPoolManager",
             "label": "userStakes",
             "type": "t_mapping(t_uint256,t_mapping(t_address,t_uint256))",
-            "src": "contracts/staking/PolkaminePoolManager.sol:38"
+            "src": "contracts/staking/MineNetworkPoolManager.sol:38"
           },
           {
-            "contract": "PolkaminePoolManager",
+            "contract": "MineNetworkPoolManager",
             "label": "poolStakes",
             "type": "t_mapping(t_uint256,t_uint256)",
-            "src": "contracts/staking/PolkaminePoolManager.sol:39"
+            "src": "contracts/staking/MineNetworkPoolManager.sol:39"
           },
           {
-            "contract": "PolkaminePoolManager",
+            "contract": "MineNetworkPoolManager",
             "label": "isDeprecatedPool",
             "type": "t_mapping(t_uint256,t_bool)",
-            "src": "contracts/staking/PolkaminePoolManager.sol:40"
+            "src": "contracts/staking/MineNetworkPoolManager.sol:40"
           }
         ],
         "types": {
@@ -3596,10 +3596,10 @@
             "label": "address"
           },
           "t_array(t_struct(PoolInfo)3365_storage)dyn_storage": {
-            "label": "struct PolkaminePoolManager.PoolInfo[]"
+            "label": "struct MineNetworkPoolManager.PoolInfo[]"
           },
           "t_struct(PoolInfo)3365_storage": {
-            "label": "struct PolkaminePoolManager.PoolInfo",
+            "label": "struct MineNetworkPoolManager.PoolInfo",
             "members": [
               {
                 "label": "depositToken",
@@ -3669,34 +3669,34 @@
             "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:67"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "addressManager",
             "type": "t_address",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:41"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:41"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "userLastClaimedAt",
             "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:42"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:42"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "claimInterval",
             "type": "t_uint256",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:43"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:43"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "claimIndex",
             "type": "t_uint256",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:44"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:44"
           },
           {
-            "contract": "PolkamineRewardDistributor",
+            "contract": "MineNetworkRewardDistributor",
             "label": "isUsedSignature",
             "type": "t_mapping(t_bytes_memory_ptr,t_bool)",
-            "src": "contracts/staking/PolkamineRewardDistributor.sol:45"
+            "src": "contracts/staking/MineNetworkRewardDistributor.sol:45"
           }
         ],
         "types": {

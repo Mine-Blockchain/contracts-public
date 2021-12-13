@@ -3323,7 +3323,7 @@
                 "type": "function"
             }
         ],
-        "PolkamineAdmin": [
+        "MineNetworkAdmin": [
             {
                 "anonymous": false,
                 "inputs": [
@@ -3599,7 +3599,7 @@
                 "type": "function"
             }
         ],
-        "PolkaminePoolManager": [
+        "MineNetworkPoolManager": [
             {
                 "anonymous": false,
                 "inputs": [
@@ -3878,7 +3878,7 @@
                 "type": "function"
             }
         ],
-        "PolkamineRewardDistributor": [
+        "MineNetworkRewardDistributor": [
             {
                 "anonymous": false,
                 "inputs": [

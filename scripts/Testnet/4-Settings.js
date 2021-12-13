@@ -44,22 +44,22 @@ main = async () => {
   // Addresses
   [deployer] = await ethers.getSigners();
 
-  // Register addresses to PolkamineAdmin
-  const polkamineAdminAftifact = await hre.artifacts.readArtifact("PolkamineAdmin");
-  const polkamineAdmin = await hre.ethers.getContractAt(polkamineAdminAftifact.abi, contracts["PolkamineAdmin"]);
+  // Register addresses to MineNetworkAdmin
+  const MineNetworkAdminAftifact = await hre.artifacts.readArtifact("MineNetworkAdmin");
+  const mineNetworkAdmin = await hre.ethers.getContractAt(MineNetworkAdminAftifact.abi, contracts["MineNetworkAdmin"]);
 
-  await polkamineAdmin.setRewardDepositor(rewardDepositorAddress);
-  await polkamineAdmin.setMaintainer(maintainerAddress);
-  await polkamineAdmin.setTreasury(treasuryAddress);
-  await polkamineAdmin.setRewardDistributorContract(contracts["PolkamineRewardDistributor"]);
-  await polkamineAdmin.setPoolManagerContract(contracts["PolkaminePoolManager"]);
+  await mineNetworkAdmin.setRewardDepositor(rewardDepositorAddress);
+  await mineNetworkAdmin.setMaintainer(maintainerAddress);
+  await mineNetworkAdmin.setTreasury(treasuryAddress);
+  await mineNetworkAdmin.setRewardDistributorContract(contracts["MineNetworkRewardDistributor"]);
+  await mineNetworkAdmin.setPoolManagerContract(contracts["MineNetworkPoolManager"]);
 
   // Add pools
   const wBTC = config.wBTC;
   const wETH = config.wETH;
 
-  const polkaminePoolManagerArtifact = await hre.artifacts.readArtifact("PolkaminePoolManager");
-  const polkaminePoolManager = await hre.ethers.getContractAt(polkaminePoolManagerArtifact.abi, contracts["PolkaminePoolManager"]);
+  const MineNetworkPoolManagerArtifact = await hre.artifacts.readArtifact("MineNetworkPoolManager");
+  const mineNetworkPoolManager = await hre.ethers.getContractAt(MineNetworkPoolManagerArtifact.abi, contracts["MineNetworkPoolManager"]);
 
   const pBTCMAftifact = await hre.artifacts.readArtifact("PToken");
   const pBTCM = await hre.ethers.getContractAt(pBTCMAftifact.abi, contracts["pBTCM"]);
@@ -71,8 +71,8 @@ main = async () => {
   const mine = await hre.ethers.getContractAt(mineAftifact.abi, contracts["MNET"]);
 
   // const manager = await impersonateAccountAndSetBalance(managerAddress);
-  // await polkaminePoolManager.connect(manager).addPool(pBTCM.address, wBTC.address, mine.address);
-  // await polkaminePoolManager.connect(manager).addPool(pETHM.address, wETH.address, mine.address);
+  // await mineNetworkPoolManager.connect(manager).addPool(pBTCM.address, wBTC.address, mine.address);
+  // await mineNetworkPoolManager.connect(manager).addPool(pETHM.address, wETH.address, mine.address);
 
   
   // Grant roles to PTokens and MINE Token
@@ -92,11 +92,11 @@ main = async () => {
   await tokenSale.setTokenSupplyAmount(pETHM.address, ether(pETHMSupply));
 
   // Set claimIndex
-  // const polkamineRewardDistributorAftifact = await hre.artifacts.readArtifact("PolkamineRewardDistributor");
-  // const polkamineRewardDistributor = await hre.ethers.getContractAt(polkamineRewardDistributorAftifact.abi, contracts["PolkamineRewardDistributor"]);
+  // const MineNetworkRewardDistributorAftifact = await hre.artifacts.readArtifact("MineNetworkRewardDistributor");
+  // const mineNetworkRewardDistributor = await hre.ethers.getContractAt(MineNetworkRewardDistributorAftifact.abi, contracts["MineNetworkRewardDistributor"]);
 
   // const maintainer = await impersonateAccountAndSetBalance(maintainerAddress);
-  // await polkamineRewardDistributor.connect(maintainer).setClaimIndex(claimIndex);
+  // await mineNetworkRewardDistributor.connect(maintainer).setClaimIndex(claimIndex);
 };
 
 // We recommend this pattern to be able to use async/await everywhere
